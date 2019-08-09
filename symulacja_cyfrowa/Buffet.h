@@ -8,13 +8,21 @@ class Buffet
 	: public SimulationObjcet
 {
 	Group* current_clients_;
+	Restaurant* restaurant_;
 
 public:
 
-	Buffet();
+	Buffet(Restaurant* restaurant);
+
+	Group* GetCurrentClients(void) const;
+	void SetCurrentClients(Group* wsk);
+
 	int GetTime() override;
 	void SetTime(int t);
-	std::string GetEventType() override;
+
+	void ConditionalEvent(int t);
+
+	void Execute(int t) override;
 
 };
 

@@ -1,5 +1,8 @@
+
 #pragma once
+#include <iostream>
 #include <string>
+
 
 class SimulationObjcet
 {
@@ -11,7 +14,8 @@ protected:
 public:
 	virtual ~SimulationObjcet() = default;
 	virtual int GetTime() = 0;
-	virtual std::string GetEventType() = 0;
-
+	virtual void Execute(int) = 0;
 	
 };
+
+
